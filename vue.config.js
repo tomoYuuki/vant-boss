@@ -1,3 +1,5 @@
+const path = require("path");
+const myTheme = path.resolve(__dirname, "src/assets/less/index.less");
 module.exports = {
   configureWebpack: {
     resolve: {
@@ -8,6 +10,15 @@ module.exports = {
         components: "@/components",
         network: "@/network",
         views: "@/views",
+      },
+    },
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        modifyVars: {
+          hack: `true; @import "${myTheme}";`,
+        },
       },
     },
   },

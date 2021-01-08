@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <van-tabbar v-if="showTabbar" v-model="activeIndex">
       <van-tabbar-item icon="home-o" to="/job">职位</van-tabbar-item>
       <van-tabbar-item icon="search" to="/discover">发现</van-tabbar-item>
@@ -38,4 +40,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+@import url("assets/css/base.css");
+</style>
